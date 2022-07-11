@@ -27,23 +27,4 @@ def verify_login_form_opens(context):
     context.driver.wait.until(EC.visibility_of_element_located(ACCOUNT))
 
 
-# @given('Open Amazon product {product_id} page')
-# def open_product(context, product_id):
-#     context.driver.get(f'https://www.amazon.com/dp/{product_id}/')
-#
-#
-# @when('Click on Add to cart button')
-# def click_ass_to_cart(context):
-#     context.driver.find_element(*ADD_TO_CART_BTN).click()
-#     context.driver.wait.until(EC.invisibility_of_element_located(ADD_TO_CART_BTN))
-#
-#
-#     @when ('Store product name')
-#     def get_product_name(context):
-#         context.product_name = context.driver.find.element(*PRODUCT_NAME).text
-#         print(f'Current product: {context.product_name}')
-#
-#
-#     @then ('Verify user can click through colors')
-#     def verify_clicking_colors(context):
-#         expected_colors = ['Navy', 'Black', 'Solid Black']
+

@@ -8,7 +8,8 @@ class Page:
         self.driver = driver
         self.wait = WebDriverWait(self.driver, 10)
         self.base_url = 'https://gettop.us/'
-        self.help_url = "https://www.amazon.com/gp/help/customer/display.html"
+        self.help_url = 'https://gettop.us/my-account/'
+        self.expected_text = 'BEST SELLING'
 
     def click(self, *locator):
         self.driver.find_element(*locator).click()
