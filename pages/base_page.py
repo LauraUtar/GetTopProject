@@ -8,7 +8,7 @@ class Page:
         self.driver = driver
         self.wait = WebDriverWait(self.driver, 10)
         self.base_url = 'https://gettop.us/'
-        self.help_url = 'https://gettop.us/my-account/'
+        self.help_url = 'https://gettop.us/product-category/accessories/'
         self.expected_text = 'BEST SELLING'
 
     def click(self, *locator):
