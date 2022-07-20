@@ -5,8 +5,3 @@ Feature: Clicking on Account icon opens Login form
     When Click on Account icon
     Then Verify login form opens
 
-#
-#Code is getting executed. However, the verification seems to be incorrect.
-#  You are verifying the visibility of the ACCOUNT icon.
-#  This is incorrect. You can verify any element from the Login form including the LOGIN button.
-#  Please update and resubmit. Moving the Jira back to ‘In Progress’
