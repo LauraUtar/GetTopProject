@@ -5,7 +5,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 # init driver
-driver = webdriver.Chrome(executable_path='/Users/laurautarbayeva/Desktop/GET_TOP_INTERNSHIP/chromedriver 3')
+driver = webdriver.Chrome(executable_path='/chromedriver')
 driver.maximize_window()
 
 # It will be applied to wait.until

@@ -2,8 +2,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from pages.base_page import Page
 
-ACCOUNT = (By.CSS_SELECTOR, "i.icon-user")
+# ACCOUNT = (By.CSS_SELECTOR, "i.icon-user")
+ACCOUNT = (By.CSS_SELECTOR, 'a[href="https://gettop.us/my-account/"]')
 LOGIN_PAGE = (By.CSS_SELECTOR, "h3")
+HAMBURGER_MENU = (By. CSS_SELECTOR, ".icon-menu")
+
+
 
 class GettopheaderPage(Page):
 
@@ -17,4 +21,10 @@ class GettopheaderPage(Page):
         self.wait_for_element_appear(*LOGIN_PAGE)
         actual_result = self.find_element(*LOGIN_PAGE).text
         assert expected_result == actual_result, f'Error! Actual text {actual_result} does not match expected {expected_result}'
+
+    def click_over_hamburger_menu(self):
+        self.click(*HAMBURGER_MENU)
+
+    def click_login_option(self):
+        self.click(*ACCOUNT)
 

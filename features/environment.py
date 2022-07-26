@@ -29,6 +29,11 @@ def browser_init(context, test_name):
     # context.driver = webdriver.Firefox(executable_path='C:\\Users\\EZ-Trainer\\Desktop\\python-selenium-automation\\geckodriver.exe')
     # context.driver = webdriver.Safari()
 
+    options = webdriver.ChromeOptions()
+    mobile_emulation = {"deviceName": "iPhone 12 Pro"}
+    options.add_experimental_option("mobileEmulation", mobile_emulation)
+    context.driver = webdriver.Chrome(chrome_options=options, executable_path="/Users/laurautarbayeva/Desktop/GET_TOP_INTERNSHIP/chromedriver")
+
     # HEADLESS MODE
     # options =webdriver.ChromeOptions()
     # options.add_argument('--headless')
@@ -40,17 +45,30 @@ def browser_init(context, test_name):
     # for headless mode ###
     # context.driver = EventFiringWebDriver(webdriver.Chrome(chrome_options = options), MyListener())
 
-    ### for browerstack ###
-    desired_cap = {
-        'browser': 'Chrome',
-        'os': 'Windows',
-        'os_version': '10',
-        'browser_version': 'latest',
-        'browserstack.local': 'false',
-        'name': test_name
-    }
-    url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
-    context.driver = webdriver.Remote(url, desired_capabilities=desired_cap)
+    # ### for browerstack desktop ###
+    # desired_cap = {
+    #     'browser': 'Chrome',
+    #     'os': 'Windows',
+    #     'os_version': '10',
+    #     'browser_version': 'latest',
+    #     'browserstack.local': 'false',
+    #     'name': test_name
+    # }
+    # url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
+    # context.driver = webdriver.Remote(url, desired_capabilities=desired_cap)
+
+    ### BrowserStack for Mobile Web Testing ###
+    # desired_cap = {
+    #     'bstack:options': {
+    #         "osVersion": "10",
+    #         "deviceName": " Samsung Galaxy S20",
+    #         "realMobile": "true",
+    #         "local": "false",
+    #     },
+    #     "browserName": "chrome",
+    # }
+    # url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
+    # context.driver = webdriver.Remote(url, desired_capabilities=desired_cap)
 
     context.driver.maximize_window()
     context.driver.implicitly_wait(5)
@@ -75,11 +93,11 @@ def after_step(context, step):
         print('\nStep failed: ', step)
         logger.error(f'Step failed: {step.name}')
         # Attach a screenshot to Allure report in case the step fails
-        attach(
-            context.driver.get_screenshot_as_png(),
-            name=f'{step.name}.png',
-            attachment_type=AttachmentType.PNG
-        )
+        # attach(
+        #     context.driver.get_screenshot_as_png(),
+        #     name=f'{step.name}.png',
+        #     attachment_type=AttachmentType.PNG
+        # )
         # Mark test case as FAILED on BrowserStack:
         context.driver.execute_script(
             'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed", "reason": "Step failed"}}')
@@ -94,3 +112,30 @@ def after_scenario(context, feature):
     context.driver.delete_all_cookies()
     context.driver.quit()
     logger.info('Scenario finished.\n\n')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

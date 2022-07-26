@@ -5,3 +5,8 @@ Feature: Clicking on Account icon opens Login form
     When Click on Account icon
     Then Verify login form opens
 
+  Scenario: User can see login page in mobile version
+    Given Open GetTop
+    When Click over hamburger menu
+    And Click login option
+    Then Verify login form opens
