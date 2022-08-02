@@ -2,6 +2,7 @@
 # from allure import attach
 # from allure_commons.types import AttachmentType
 # from app.application import Application
+import os
 from app.application import Application
 from reporting.browserstack_api import BSSession
 from support.get_env import get_bs_key, get_bs_user
@@ -20,19 +21,25 @@ bs_key = 'PXazetPpJMV2Kx1NYmgH'
 # behave -f allure_behave.formatter:AllureFormatter -o test_results/ features/tests/product_page.feature
 
 
-def browser_init(context, test_name):
+def browser_init(context, test_name): #environment_variables
     """
     :param context: Behave context
     :param test_name: scenario.name
     """
-    # context.driver = webdriver.Chrome(executable_path="./chromedriver")
-    # context.driver = webdriver.Firefox(executable_path='C:\\Users\\EZ-Trainer\\Desktop\\python-selenium-automation\\geckodriver.exe')
-    # context.driver = webdriver.Safari()
-
-    options = webdriver.ChromeOptions()
-    mobile_emulation = {"deviceName": "iPhone 12 Pro"}
-    options.add_experimental_option("mobileEmulation", mobile_emulation)
-    context.driver = webdriver.Chrome(chrome_options=options, executable_path="/Users/laurautarbayeva/Desktop/GET_TOP_INTERNSHIP/chromedriver")
+    if 'BROWSER' not in os.environ:
+        context.driver = webdriver.Chrome(executable_path="./chromedriver")
+    else:
+        if os.environ['BROWSER'].lower() == 'chrome':
+            context.driver = webdriver.Chrome(executable_path="./chromedriver")
+        if os.environ['BROWSER'].lower() == 'firefox':
+            context.driver = webdriver.Firefox(executable_path='C:\\Users\\EZ-Trainer\\Desktop\\python-selenium-automation\\geckodriver.exe')
+        if os.environ['BROWSER'].lower() == 'safari':
+            context.driver = webdriver.Safari()
+        if os.environ['BROWSER'].lower() == 'mobile_chrome':
+            options = webdriver.ChromeOptions()
+            mobile_emulation = {"deviceName": "iPhone 12 Pro"}
+            options.add_experimental_option("mobileEmulation", mobile_emulation)
+            context.driver = webdriver.Chrome(chrome_options=options, executable_path="/Users/laurautarbayeva/Desktop/GET_TOP_INTERNSHIP/chromedriver")
 
     # HEADLESS MODE
     # options =webdriver.ChromeOptions()

@@ -259,3 +259,42 @@
 2022-07-26 12:21:22,825 - support.logger - INFO - Scenario finished.
 
 
+2022-07-27 19:36:58,550 - support.logger - INFO - Started scenario: User can see login page by clicking on account icon
+2022-07-27 19:37:01,364 - support.logger - INFO - Started step: Open GetTop
+2022-07-27 19:37:06,502 - support.logger - INFO - Started step: Click on Account icon
+2022-07-27 19:37:06,602 - support.logger - INFO - Started step: Verify login form opens
+2022-07-27 19:37:06,641 - support.logger - ERROR - Step failed: Verify login form opens
+2022-07-27 19:37:06,783 - support.logger - INFO - Scenario finished.
+
+
+2022-07-27 19:37:06,785 - support.logger - INFO - Started scenario: User can see login page in mobile version
+2022-07-27 19:37:08,886 - support.logger - INFO - Started step: Open GetTop
+2022-07-27 19:37:14,035 - support.logger - INFO - Started step: Click over hamburger menu
+2022-07-27 19:37:19,097 - support.logger - ERROR - Step failed: Click over hamburger menu
+2022-07-27 19:37:19,217 - support.logger - INFO - Scenario finished.
+
+
+2022-07-27 19:38:19,576 - support.logger - INFO - Started scenario: User can see login page by clicking on account icon
+2022-07-27 19:38:19,582 - support.logger - INFO - Started scenario: User can see login page in mobile version
+2022-07-27 19:40:04,675 - support.logger - INFO - Started scenario: User can see login page by clicking on account icon
+2022-07-27 19:40:07,373 - support.logger - INFO - Started step: Open GetTop
+2022-07-27 19:40:12,212 - support.logger - INFO - Started step: Click on Account icon
+2022-07-27 19:40:17,270 - support.logger - ERROR - Step failed: Click on Account icon
+2022-07-27 19:40:17,394 - support.logger - INFO - Scenario finished.
+
+
+2022-07-27 19:40:17,395 - support.logger - INFO - Started scenario: User can see login page in mobile version
+2022-07-27 19:40:19,580 - support.logger - INFO - Started step: Open GetTop
+2022-07-27 19:40:24,836 - support.logger - INFO - Started step: Click over hamburger menu
+2022-07-27 19:40:24,946 - support.logger - INFO - Started step: Click login option
+2022-07-27 19:40:25,723 - support.logger - INFO - Started step: Verify login form opens
+2022-07-27 19:40:25,859 - support.logger - INFO - Scenario finished.
+
+
+2022-08-02 13:43:07,242 - support.logger - INFO - Started scenario: User can see login page in mobile version
+2022-08-02 13:43:09,468 - support.logger - INFO - Started step: Open GetTop
+2022-08-02 13:43:13,695 - support.logger - INFO - Started step: Click over hamburger menu
+2022-08-02 13:43:18,739 - support.logger - ERROR - Step failed: Click over hamburger menu
+2022-08-02 13:43:18,848 - support.logger - INFO - Scenario finished.
+
+
