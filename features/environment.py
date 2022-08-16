@@ -6,7 +6,7 @@ import os
 from app.application import Application
 from reporting.browserstack_api import BSSession
 from support.get_env import get_bs_key, get_bs_user
-
+os.environ
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support.events import EventFiringWebDriver
@@ -26,6 +26,7 @@ def browser_init(context, test_name): #environment_variables
     :param context: Behave context
     :param test_name: scenario.name
     """
+    os.environ['BROWSER'] = 'mobile_chrome'
     if 'BROWSER' not in os.environ:
         context.driver = webdriver.Chrome(executable_path="./chromedriver")
     else:

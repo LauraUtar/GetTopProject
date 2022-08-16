@@ -6,6 +6,7 @@ from pages.base_page import Page
 ACCOUNT = (By.CSS_SELECTOR, 'a[href="https://gettop.us/my-account/"]')
 LOGIN_PAGE = (By.CSS_SELECTOR, "h3")
 HAMBURGER_MENU = (By. CSS_SELECTOR, ".icon-menu")
+HAMBURGER_MENU_MOBILE = (By.XPATH,"//div[@class='flex-col show-for-medium flex-left']/ul/li/a" )
 
 
 
@@ -23,7 +24,7 @@ class GettopheaderPage(Page):
         assert expected_result == actual_result, f'Error! Actual text {actual_result} does not match expected {expected_result}'
 
     def click_over_hamburger_menu(self):
-        self.click(*HAMBURGER_MENU)
+        self.wait_for_element_click(*HAMBURGER_MENU)
 
     def click_login_option(self):
         self.click(*ACCOUNT)
